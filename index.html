@@ -52,7 +52,7 @@
                 return response.json();
             }).then(function (data) {
                 sourceData = data;
-                console.log(data.Veg[1]);
+                console.log(Object.values(sourceData.Veg));
                  // TODO: Build data visualisation
 
             });
