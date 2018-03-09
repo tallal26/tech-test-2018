@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Riverford Data Analytics</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/Chart.bundle.js"></script>
+        <style type="text/css">
+            /* Chart.js */
+            @-webkit-keyframes chartjs-render-animation {
+                from {
+                    opacity: 0.99
+                }
+                to {
+                    opacity: 1
+                }
+            }
+
+            @keyframes chartjs-render-animation {
+                from {
+                    opacity: 0.99
+                }
+                to {
+                    opacity: 1
+                }
+            }
+
+            .chartjs-render-monitor {
+                -webkit-animation: chartjs-render-animation 0.001s;
+                animation: chartjs-render-animation 0.001s;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Riverford Data Analytics</h1>
+
+        <div class="container">
+            <canvas id="Chart"></canvas>
+        </div>
+
+        <script>
+            var sourceData;
+
+            // Initial data load
+            fetch("https://tallal26.github.io/tech-test-2018/data.json",  {
+                method: "GET",
+                // mode: 'no-cors',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                })
+            }).then(function (response) {          
+                console.log(JSON.parse(response));
+            }).then(function (data) {
+                sourceData = data;
+                console.log(data);
+                 // TODO: Build data visualisation
+
+            }).catch(function(err) {
+	// Error :(
+});;
+        </script>
+    </body>
+</html>
