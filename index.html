@@ -129,47 +129,59 @@
                 var finalMeatChart = new Chart(meat,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(Object.values(finalTopTens[1])),
+                            labels: Object.keys(forLooper(finalTopTens[2])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(Object.values(finalTopTens[1])),
-                                }]
+                                data: Object.keys(forLooper(finalTopTens[2])),
+                                backgroundColor: [
+                                    '#FFFFFF',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    '#FA8072',
+                                    '#DA70D6',
+                                    '#ADFF2F',
+                                    '#4169E1',
+                                    '#000080'
+                                ]
+                                 
+                            }]
                         },
                     });
                 var finalExtrasChart = new Chart(extras,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(Object.values(finalTopTens[2])),
+                            labels: Object.keys(forLooper(finalTopTens[3])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(Object.values(finalTopTens[2])),
+                                data: Object.keys(forLooper(finalTopTens[3])),
                                 }]
                         },
                     });
                 var finalRecChart = new Chart(recipeBoxes,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(Object.values(finalTopTens[3])),
+                            labels: Object.keys(forLooper(finalTopTens[4])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(Object.values(finalTopTens[3])),
+                                data: Object.keys(forLooper(finalTopTens[4])),
                                 }]
                         },
                     });
                 var finalBoxChart = new Chart(vegBoxes,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(Object.values(finalTopTens[4])),
+                            labels: Object.keys(forLooper(finalTopTens[5])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(Object.values(finalTopTens[4])),
+                                data: Object.keys(forLooper(finalTopTens[5])),
                                 }]
                         },
                     });
                 
-                var arrayofInex = Object.values(finalTopTens);
-                console.log(arrayofInex);
-                var lool = Object.values(arrayofInex[1]);
+                
 //                 console.log(lool);
 //                 var kik = Object.keys(arrayofInex);
 //                 console.log(kik);
