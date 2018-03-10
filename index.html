@@ -51,8 +51,10 @@
             }).then(function (response) {          
                 return response.json();
             }).then(function (data) {
+                //sourceData is an object with properties as the main meal eg 'veg' 'extras', the values are also an object
+                //with property and value as the specific meal and how many sales.
                 sourceData = data;
-                console.log(sourceData);
+                console.log(Object.keys(sourceData));
                 for(var mealType in sourceData){
                     if(mealType==null){}
                     else{
