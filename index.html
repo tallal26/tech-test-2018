@@ -54,7 +54,12 @@
                 return response.json();
             }).then(function (data) {
                 sourceData = data;
-                console.log(data);
+                for(var mealType in sourceData){
+                    if(mealType==null){}
+                    else{
+                        console.log(mealType);
+                    }
+                }
                 for(var mealType in sourceData){
                     //making an array of objects - each object is a singular item in each category - 
                     var mealSales = Object.values(mealType);
