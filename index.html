@@ -54,6 +54,7 @@
                 return response.json();
             }).then(function (data) {
                 sourceData = data;
+                console.log(Object.values(sourceData[0]))
                 for(var mealType in sourceData){
                     //making an array of objects - each object is a singular item in each category - 
                     var mealSales = Object.values(mealType);
@@ -85,9 +86,7 @@
                         }
                     }
                     
-                    console.log(top10Array);
-                    console.log(Object.keys(top10Array));
-                    console.log(Object.values(top10Array));
+                   
                     
                     var finalChart = new Chart(myNewChart,{
                         type:'bar',
