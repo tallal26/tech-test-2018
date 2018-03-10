@@ -112,50 +112,50 @@
                 var finalVegChart = new Chart(veg,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(finalTopTens[0]),
+                            labels: Object.keys(Object.values(finalTopTens[0])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(finalTopTens[0]),
+                                data: Object.values(Object.values(finalTopTens[0])),
                                 }]
                         },
                     });
                 var finalMeatChart = new Chart(meat,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(finalTopTens[1]),
+                            labels: Object.keys(Object.values(finalTopTens[1])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(finalTopTens[1]),
+                                data: Object.values(Object.values(finalTopTens[1])),
                                 }]
                         },
                     });
                 var finalExtrasChart = new Chart(extras,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(finalTopTens[2]),
+                            labels: Object.keys(Object.values(finalTopTens[2])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(finalTopTens[2]),
+                                data: Object.values(Object.values(finalTopTens[2])),
                                 }]
                         },
                     });
                 var finalRecChart = new Chart(recipeBoxes,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(finalTopTens[3]),
+                            labels: Object.keys(Object.values(finalTopTens[3])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(finalTopTens[3]),
+                                data: Object.values(Object.values(finalTopTens[3])),
                                 }]
                         },
                     });
                 var finalBoxChart = new Chart(vegBoxes,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(finalTopTens[4]),
+                            labels: Object.keys(Object.values(finalTopTens[4])),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(finalTopTens[4]),
+                                data: Object.values(Object.values(finalTopTens[4])),
                                 }]
                         },
                     });
