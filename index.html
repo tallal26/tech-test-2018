@@ -52,6 +52,7 @@
                 return response.json();
             }).then(function (data) {
                 sourceData = data;
+                console.log(sourceData);
                 for(var mealType in sourceData){
                     if(mealType==null){}
                     else{
