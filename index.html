@@ -56,8 +56,7 @@
                 sourceData = data;
                 var mainKeys = Object.keys(sourceData);
                 for(i=0;i<mainKeys.length;i++){
-                    var mealType;
-                    mealType = mainKeys[i];
+                    var mealType = mainKeys[i];
                     console.log(mealType);
                     //making an array of objects - each object is a singular item in each category - 
                     var mealObject = sourceData[mealType];
@@ -91,16 +90,16 @@
                     }
                     
                     
-                    var finalChart = new Chart(myNewChart,{
-                        type:'bar',
-                        data:{
-                            labels: Object.keys(top10Array),
-                            datasets: [{
-                                label: 'Veg',
-                                data: Object.values(top10Array),
-                                }]
-                        },
-                    });
+//                     var finalChart = new Chart(myNewChart,{
+//                         type:'bar',
+//                         data:{
+//                             labels: Object.keys(top10Array),
+//                             datasets: [{
+//                                 label: 'Veg',
+//                                 data: Object.values(top10Array),
+//                                 }]
+//                         },
+//                     });
                 }            
             });
         </script>
