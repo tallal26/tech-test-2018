@@ -48,6 +48,13 @@
             var recipeBoxes = document.getElementById('Recipe boxes').getContext('2d');
             var vegBoxes = document.getElementById('Veg boxes').getContext('2d');
             var sourceData;
+            function forLooper(arrayOfObjects){
+                var object = {};
+                for(i=0;i<p1.length;i++){
+                    object[Object.keys(p1[i])] = Object.values(p1[i]); 
+                }
+                return object;
+            }
             
             // Initial data load
             fetch("https://tallal26.github.io/tech-test-2018/data.json",  {
@@ -109,16 +116,16 @@
 //                     });
                 }
                 
-                var finalVegChart = new Chart(veg,{
-                        type:'bar',
-                        data:{
-                            labels: Object.keys(Object.values(finalTopTens[0])),
-                            datasets: [{
-                                label: 'Veg',
-                                data: Object.values(Object.values(finalTopTens[0])),
-                                }]
-                        },
-                    });
+//                 var finalVegChart = new Chart(veg,{
+//                         type:'bar',
+//                         data:{
+//                             labels: Object.keys(forLooper(Object.values(finalTopTens),
+//                             datasets: [{
+//                                 label: 'Veg',
+//                                 data: Object.values(Object.values(finalTopTens[0])),
+//                                 }]
+//                         },
+//                     });
                 var finalMeatChart = new Chart(meat,{
                         type:'bar',
                         data:{
@@ -159,7 +166,9 @@
                                 }]
                         },
                     });
+                
                 var arrayofInex = Object.values(finalTopTens);
+                console.log(arrayofInex);
                 var lool = Object.values(arrayofInex[1]);
 //                 console.log(lool);
 //                 var kik = Object.keys(arrayofInex);
