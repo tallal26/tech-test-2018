@@ -55,52 +55,51 @@
                 //with property and value as the specific meal and how many sales.
                 sourceData = data;
                 var mainKeys = Object.keys(sourceData);
-                var x = mainKeys[1];
-                console.log(sourceData[x]);
-//                 for(var mealType in mainKeys){
-//                     //making an array of objects - each object is a singular item in each category - 
-//                     var mealObject = sourceData[mealType];
-//                     var mealSales = Object.values(mealObject);
-//                     var mealNames = Object.keys(mealObject);
-//                     var individualObjects = [{}];
-//                     for(i=0;i<mealNames.length;i++){
-//                         //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
-//                         //to an array so I can sort them by their values and still have their name property associated with them.
-//                         var object={};
-//                         object[mealNames[i]]=mealSales[i];
-//                         individualObjects.push(object);
-//                     }
-//                     var sortedObjects = individualObjects.sort(function(a,b){
-//                         return Object.values(b)-Object.values(a);
-//                     });
+                for(int i=0;i<mainKeys.length;i++){
+                    var mealType = mainKeys[i];
+                    //making an array of objects - each object is a singular item in each category - 
+                    var mealObject = sourceData[mealType];
+                    var mealSales = Object.values(mealObject);
+                    var mealNames = Object.keys(mealObject);
+                    var individualObjects = [{}];
+                    for(i=0;i<mealNames.length;i++){
+                        //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
+                        //to an array so I can sort them by their values and still have their name property associated with them.
+                        var object={};
+                        object[mealNames[i]]=mealSales[i];
+                        individualObjects.push(object);
+                    }
+                    var sortedObjects = individualObjects.sort(function(a,b){
+                        return Object.values(b)-Object.values(a);
+                    });
                     
-//                     var ArraySize = sortedObjects.length;
-//                     var top10Array=[{}];
+                    var ArraySize = sortedObjects.length;
+                    var top10Array=[{}];
                     
-//                     if(ArraySize-10>0){
-//                         for(i=0;i<10;i++){
-//                         top10Array.push(sortedObjects[i]);
-//                         }
-//                     }   
-//                     else{
-//                         for(i=0;i<ArraySize;i++){
-//                             top10Array.push(sortedObjects[i]);
-//                         }
-//                     }
+                    if(ArraySize-10>0){
+                        for(i=0;i<10;i++){
+                        top10Array.push(sortedObjects[i]);
+                        }
+                    }   
+                    else{
+                        for(i=0;i<ArraySize;i++){
+                            top10Array.push(sortedObjects[i]);
+                        }
+                    }
                     
                    
                     
-//                     var finalChart = new Chart(myNewChart,{
-//                         type:'bar',
-//                         data:{
-//                             labels: Object.keys(top10Array),
-//                             datasets: [{
-//                                 label: 'Veg',
-//                                 data: Object.values(top10Array),
-//                                 }]
-//                         },
-//                     });
-//                 }            
+                    var finalChart = new Chart(myNewChart,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(top10Array),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(top10Array),
+                                }]
+                        },
+                    });
+                }            
             });
         </script>
     </body>
