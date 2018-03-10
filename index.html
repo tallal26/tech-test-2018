@@ -116,16 +116,16 @@
 //                     });
                 }
                 
-//                 var finalVegChart = new Chart(veg,{
-//                         type:'bar',
-//                         data:{
-//                             labels: Object.keys(forLooper(Object.values(finalTopTens),
-//                             datasets: [{
-//                                 label: 'Veg',
-//                                 data: Object.values(Object.values(finalTopTens[0])),
-//                                 }]
-//                         },
-//                     });
+                var finalVegChart = new Chart(veg,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(forLooper(finalTopTens[1])),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(forLooper(finalTopTens[1])),
+                                }]
+                        },
+                    });
                 var finalMeatChart = new Chart(meat,{
                         type:'bar',
                         data:{
