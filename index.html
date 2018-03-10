@@ -84,7 +84,6 @@
                     
                     var ArraySize = sortedObjects.length;
                     var top10Array=[{}];
-                    console.log(top10Array);
                     if(ArraySize-10>0){
                         for(k=0;k<10;k++){
                         top10Array.push(sortedObjects[k]);
@@ -161,7 +160,7 @@
                         },
                     });
                 
-                console.log(finalTopTens);
+                console.log(Object.keys(finalTopTens[0]));
             });
         </script>
     </body>
