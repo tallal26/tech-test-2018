@@ -33,12 +33,20 @@
         <h1>Riverford Data Analytics</h1>
 
         <div class="container">
-            <canvas id="Chart"></canvas>
+            <canvas id="Veg"></canvas>
+            <canvas id="Meat"></canvas>
+            <canvas id="Extras"></canvas>
+            <canvas id="Recipe boxes"></canvas>
+            <canvas id="Veg boxes"></canvas>
         </div>
 
         <script>
             //Required for chart.js
-            var myNewChart = document.getElementById('Chart').getContext('2d');
+            var veg = document.getElementById('Veg').getContext('2d');
+            var meat = document.getElementById('Meat').getContext('2d');
+            var extras = document.getElementById('Extras').getContext('2d');
+            var recipeBoxes = document.getElementById('Recipe boxes').getContext('2d');
+            var vegBoxes = document.getElementById('Veg boxes').getContext('2d');
             var sourceData;
             
             // Initial data load
@@ -55,6 +63,7 @@
                 //with property and value as the specific meal and how many sales.
                 sourceData = data;
                 var mainKeys = Object.keys(sourceData);
+                var finalTopTens = [[{}]];
                 for(i=0;i<mainKeys.length;i++){
                     var mealType = mainKeys[i];
                     //making an array of objects - each object is a singular item in each category - 
@@ -87,18 +96,72 @@
                         }
                     }
                     
+                    finalTopTens.push(top10Array);
                     
-                    var finalChart = new Chart(myNewChart,{
+//                     var finalChart = new Chart(myNewChart,{
+//                         type:'bar',
+//                         data:{
+//                             labels: Object.keys(top10Array),
+//                             datasets: [{
+//                                 label: 'Veg',
+//                                 data: Object.values(top10Array),
+//                                 }]
+//                         },
+//                     });
+                }
+                
+                var finalVegChart = new Chart(veg,{
                         type:'bar',
                         data:{
-                            labels: Object.keys(top10Array),
+                            labels: Object.keys(finalTopTens[0]),
                             datasets: [{
                                 label: 'Veg',
-                                data: Object.values(top10Array),
+                                data: Object.values(finalTopTens[0]),
                                 }]
                         },
                     });
-                }            
+                var finalMeatChart = new Chart(meat,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(finalTopTens[1]),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(finalTopTens[1]),
+                                }]
+                        },
+                    });
+                var finalExtrasChart = new Chart(extras,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(finalTopTens[2]),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(finalTopTens[2]),
+                                }]
+                        },
+                    });
+                var finalRecChart = new Chart(recipeBoxes,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(finalTopTens[3]),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(finalTopTens[3]),
+                                }]
+                        },
+                    });
+                var finalBoxChart = new Chart(vegBoxes,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(finalTopTens[4]),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(finalTopTens[4]),
+                                }]
+                        },
+                    });
+                
+                console.log(finalTopTens);
             });
         </script>
     </body>
