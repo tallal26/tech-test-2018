@@ -54,13 +54,16 @@
                 return response.json();
             }).then(function (data) {
                 sourceData = data;
-                for(var mealType in Object.values(sourceData){
-                    if(mealType==null){}
-                    else{
-                        console.log(mealType);
-                    }
+                var mealS = Object.values(sourceData);
+                var mealN = Object.keys(sourceData);
+                var meals = [{}];
+                for(i=0;i<mealN.length;i++){
+                   var object={};
+                   object[mealN[i]]=mealS[i];
+                   meals.push(object);
                 }
-                for(var mealType in sourceData){
+                
+                for(var mealType in meals){
                     //making an array of objects - each object is a singular item in each category - 
                     var mealSales = Object.values(mealType);
                     var mealNames = Object.keys(mealType);
