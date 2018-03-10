@@ -59,6 +59,7 @@
                     var mealType = mainKeys[i];
                     //making an array of objects - each object is a singular item in each category - 
                     var mealObject = sourceData[mealType];
+                    console.log(mealObject);
                     var mealSales = Object.values(mealObject);
                     var mealNames = Object.keys(mealObject);
                     var individualObjects = [{}];
@@ -87,7 +88,6 @@
                         }
                     }
                     
-                   console.log(top10Array);
                     
                     var finalChart = new Chart(myNewChart,{
                         type:'bar',
