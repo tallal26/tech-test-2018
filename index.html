@@ -58,9 +58,13 @@
                 var mealN = Object.keys(sourceData);
                 var meals = [{}];
                 for(i=0;i<mealN.length;i++){
-                   var object={};
-                   object[mealN[i]]=mealS[i];
-                   meals.push(object);
+                   if(mealN[i]==null||mealS[i]==null{}
+                   
+                   else{
+                       var object={};
+                       object[mealN[i]]=mealS[i];
+                       meals.push(object);
+                   }
                 }
                                 
 //                 for(var mealType in meals){
