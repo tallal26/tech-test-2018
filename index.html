@@ -63,11 +63,23 @@
                    meals.push(object);
                 }
                                 
-                for(var mealType in meals){
-                    console.log(mealType);
-                    //making an array of objects - each object is a singular item in each category - 
-                    var mealSales = Object.values(mealType);
-                    var mealNames = Object.keys(mealType);
+//                 for(var mealType in meals){
+//                     console.log(mealType);
+//                     //making an array of objects - each object is a singular item in each category - 
+//                     var mealSales = Object.values(mealType);
+//                     var mealNames = Object.keys(mealType);
+//                     var individualObjects = [{}];
+//                     for(i=0;i<mealNames.length;i++){
+//                         //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
+//                         //to an array so I can sort them by their values and still have their name property associated with them.
+//                         var object={};
+//                         object[mealNames[i]]=mealSales[i];
+//                         individualObjects.push(object);
+//                     }
+                    
+                    for(i=0;i<meals.length;i++){
+                    var mealSales = Object.values(meals[i]);
+                    var mealNames = Object.keys(meals[i]);
                     var individualObjects = [{}];
                     for(i=0;i<mealNames.length;i++){
                         //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
@@ -76,7 +88,6 @@
                         object[mealNames[i]]=mealSales[i];
                         individualObjects.push(object);
                     }
-
                     var sortedObjects = individualObjects.sort(function(a,b){
                         return Object.values(b)-Object.values(a);
                     });
