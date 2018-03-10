@@ -61,44 +61,43 @@
                     var mealObject = sourceData[mealType];
                     var mealSales = Object.values(mealObject);
                     var mealNames = Object.keys(mealObject);
-                    console.log(mealNames);
-//                     var individualObjects = [{}];
-//                     for(i=0;i<mealNames.length;i++){
-//                         //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
-//                         //to an array so I can sort them by their values and still have their name property associated with them.
-//                         var object={};
-//                         object[mealNames[i]]=mealSales[i];
-//                         individualObjects.push(object);
-//                     }
-//                     var sortedObjects = individualObjects.sort(function(a,b){
-//                         return Object.values(b)-Object.values(a);
-//                     });
+                    var individualObjects = [{}];
+                    for(j=0;j<mealNames.length;j++){
+                        //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
+                        //to an array so I can sort them by their values and still have their name property associated with them.
+                        var object={};
+                        object[mealNames[j]]=mealSales[j];
+                        individualObjects.push(object);
+                    }
+                    var sortedObjects = individualObjects.sort(function(a,b){
+                        return Object.values(b)-Object.values(a);
+                    });
                     
-//                     var ArraySize = sortedObjects.length;
-//                     var top10Array=[{}];
+                    var ArraySize = sortedObjects.length;
+                    var top10Array=[{}];
+                    console.log(top10Array);
+                    if(ArraySize-10>0){
+                        for(i=0;i<10;i++){
+                        top10Array.push(sortedObjects[i]);
+                        }
+                    }   
+                    else{
+                        for(i=0;i<ArraySize;i++){
+                            top10Array.push(sortedObjects[i]);
+                        }
+                    }
                     
-//                     if(ArraySize-10>0){
-//                         for(i=0;i<10;i++){
-//                         top10Array.push(sortedObjects[i]);
-//                         }
-//                     }   
-//                     else{
-//                         for(i=0;i<ArraySize;i++){
-//                             top10Array.push(sortedObjects[i]);
-//                         }
-//                     }
                     
-                    
-//                     var finalChart = new Chart(myNewChart,{
-//                         type:'bar',
-//                         data:{
-//                             labels: Object.keys(top10Array),
-//                             datasets: [{
-//                                 label: 'Veg',
-//                                 data: Object.values(top10Array),
-//                                 }]
-//                         },
-//                     });
+                    var finalChart = new Chart(myNewChart,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(top10Array),
+                            datasets: [{
+                                label: 'Veg',
+                                data: Object.values(top10Array),
+                                }]
+                        },
+                    });
                 }            
             });
         </script>
