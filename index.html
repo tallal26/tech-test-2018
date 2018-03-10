@@ -54,7 +54,8 @@
                 //sourceData is an object with properties as the main meal eg 'veg' 'extras', the values are also an object
                 //with property and value as the specific meal and how many sales.
                 sourceData = data;
-                var mainKeys = Object.keys(sourceData);                
+                var mainKeys = Object.keys(sourceData);        
+                console.log(mainKeys[1]);
                 for(var mealType in mainKeys){
                     //making an array of objects - each object is a singular item in each category - 
                     var mealObject = sourceData[mealType];
