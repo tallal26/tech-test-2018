@@ -121,18 +121,31 @@
                         data:{
                             labels: Object.keys(forLooper(finalTopTens[1])),
                             datasets: [{
-                                label: 'Veg',
+                                label: 'Top 10 Selling Veg Items',
                                 data: Object.values(forLooper(finalTopTens[1])),
-                                }]
+                                }],
+                                backgroundColor: [
+                                    '#FFFFFF',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    '#FA8072',
+                                    '#DA70D6',
+                                    '#ADFF2F',
+                                    '#4169E1',
+                                    '#000080'
+                                ]                            
                         },
                     });
                 var finalMeatChart = new Chart(meat,{
-                        type:'bar',
+                        type:'pie',
                         data:{
                             labels: Object.keys(forLooper(finalTopTens[2])),
                             datasets: [{
-                                label: 'Veg',
-                                data: Object.keys(forLooper(finalTopTens[2])),
+                                label: 'Top 10 Selling Meat Items',
+                                data: Object.values(forLooper(finalTopTens[2])),
                                 backgroundColor: [
                                     '#FFFFFF',
                                     'rgba(54, 162, 235, 0.2)',
@@ -151,33 +164,72 @@
                         },
                     });
                 var finalExtrasChart = new Chart(extras,{
-                        type:'bar',
+                        type:'pie',
                         data:{
                             labels: Object.keys(forLooper(finalTopTens[3])),
                             datasets: [{
-                                label: 'Veg',
-                                data: Object.keys(forLooper(finalTopTens[3])),
-                                }]
+                                label: 'Top 10 Selling Extras',
+                                data: Object.values(forLooper(finalTopTens[3])),
+                                }],
+                                backgroundColor: [
+                                    '#FFFFFF',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    '#FA8072',
+                                    '#DA70D6',
+                                    '#ADFF2F',
+                                    '#4169E1',
+                                    '#000080'
+                                ]                            
                         },
                     });
                 var finalRecChart = new Chart(recipeBoxes,{
-                        type:'bar',
+                        type:'pie',
                         data:{
                             labels: Object.keys(forLooper(finalTopTens[4])),
                             datasets: [{
-                                label: 'Veg',
-                                data: Object.keys(forLooper(finalTopTens[4])),
-                                }]
+                                label: 'Top 10 Selling Recipe Boxes',
+                                data: Object.values(forLooper(finalTopTens[4])),
+                                }],
+                                backgroundColor: [
+                                    '#FFFFFF',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    '#FA8072',
+                                    '#DA70D6',
+                                    '#ADFF2F',
+                                    '#4169E1',
+                                    '#000080'
+                                ]                            
                         },
                     });
                 var finalBoxChart = new Chart(vegBoxes,{
-                        type:'bar',
+                        type:'pie',
                         data:{
                             labels: Object.keys(forLooper(finalTopTens[5])),
                             datasets: [{
-                                label: 'Veg',
-                                data: Object.keys(forLooper(finalTopTens[5])),
-                                }]
+                                label: 'Top 10 Selling Veg Boxes',
+                                data: Object.values(forLooper(finalTopTens[5])),
+                                }],
+                                backgroundColor: [
+                                    '#FFFFFF',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    '#FA8072',
+                                    '#DA70D6',
+                                    '#ADFF2F',
+                                    '#4169E1',
+                                    '#000080'
+                                ]                            
                         },
                     });
                 
