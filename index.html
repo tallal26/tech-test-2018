@@ -39,8 +39,10 @@
         </div>
 
         <script>
+            //Required for chart.js
+            var myNewChart = document.getElementById('Chart').getContext('2d');
             var sourceData;
-
+            
             // Initial data load
             fetch("https://tallal26.github.io/tech-test-2018/data.json",  {
                 method: "GET",
@@ -52,7 +54,48 @@
                 return response.json();
             }).then(function (data) {
                 sourceData = data;
-                console.log(sourceData);
+                for(var mealType in sourceData){
+                    //making an array of objects - each object is a singular item in each category - 
+                    var mealSales = Object.values(mealType);
+                    var mealNames = Object.keys(mealType);
+                    var individualObjects = [];
+                    for(i=0;i<mealNames.length;i++){
+                        //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
+                        //to an array so I can sort them by their values and still have their name property associated with them.
+                        var object={};
+                        object[meanlNames[i]]=mealSales[i];
+                        objectArray.push(object);
+                    }
+
+                    var sortedObjects = individualObjects.sort(function(a,b){
+                        return Object.values(b)-Object.values(a);
+                    });
+                    
+                    var ArraySize = sortedObjects.length;
+                    var top10Array=[{}];
+                    
+                    if(ArraySize-10>0{
+                        for(i=0;i<10;i++){
+                        top10Array.push(sortedObjects[i]);
+                        }
+                    }   
+                    else{
+                        for(i=0;i<ArraySize;i++){
+                            top10Array.push(sortedObjects[i]);
+                        }
+                    }
+                    
+                    var finalChart = new Chart(myNewChart,{
+                        type:'bar',
+                        data:{
+                            labels: Object.keys(top10Array),
+                            datasets: [{
+                                label: 'Veg';
+                                data: Object.values(top10Array),
+                                }]
+                        },
+                    });
+                }            
             });
         </script>
     </body>
