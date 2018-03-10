@@ -48,6 +48,8 @@
             var recipeBoxes = document.getElementById('Recipe boxes').getContext('2d');
             var vegBoxes = document.getElementById('Veg boxes').getContext('2d');
             var sourceData;
+            
+            //function for the final array which contains arrays of the top 10 most sold objects
             function forLooper(arrayOfObjects){
                 var object = {};
                 for(i=0;i<arrayOfObjects.length;i++){
@@ -66,15 +68,18 @@
             }).then(function (response) {          
                 return response.json();
             }).then(function (data) {
-                //sourceData is an object with properties as the main meal eg 'veg' 'extras', the values are also an object
+                //sourceData is an object with properties as the main meal eg 'veg','extras', the values are also an object
                 //with property and value as the specific meal and how many sales.
                 sourceData = data;
+                //mainKeys is an array containing the names of all the main meals eg' 'veg', 'extras'
                 var mainKeys = Object.keys(sourceData);
                 var finalTopTens = [{}];
+                //iterates through the main meal objects
                 for(i=0;i<mainKeys.length;i++){
                     var mealType = mainKeys[i];
                     //making an array of objects - each object is a singular item in each category - 
                     var mealObject = sourceData[mealType];
+                    //mealSales is an array with the integer properties corrospending to each 
                     var mealSales = Object.values(mealObject);
                     var mealNames = Object.keys(mealObject);
                     var individualObjects = [{}];
@@ -125,7 +130,7 @@
                                 data: Object.values(forLooper(finalTopTens[1])),
                                 backgroundColor: [
                                     '#FFFFFF',
-                                    'rgba(54, 162, 235, 0.2)',
+                                    '#FF0000',
                                     '#008080',
                                     '#FFFF00',
                                     'rgba(153, 102, 255, 0.2)',
@@ -148,7 +153,7 @@
                                 data: Object.values(forLooper(finalTopTens[2])),
                                 backgroundColor: [
                                     '#FFFFFF',
-                                    'rgba(54, 162, 235, 0.2)',
+                                    '#FF0000',
                                     '#008080',
                                     '#FFFF00',
                                     'rgba(153, 102, 255, 0.2)',
@@ -172,7 +177,7 @@
                                 data: Object.values(forLooper(finalTopTens[3])),
                                 backgroundColor: [
                                     '#FFFFFF',
-                                    'rgba(54, 162, 235, 0.2)',
+                                    '#FF0000',
                                     '#008080',
                                     '#FFFF00',
                                     'rgba(153, 102, 255, 0.2)',
@@ -195,7 +200,7 @@
                                 data: Object.values(forLooper(finalTopTens[4])),
                                 backgroundColor: [
                                     '#FFFFFF',
-                                    'rgba(54, 162, 235, 0.2)',
+                                    '#FF0000',
                                     '#008080',
                                     '#FFFF00',
                                     'rgba(153, 102, 255, 0.2)',
@@ -218,7 +223,7 @@
                                 data: Object.values(forLooper(finalTopTens[5])),
                                 backgroundColor: [
                                     '#FFFFFF',
-                                    'rgba(54, 162, 235, 0.2)',
+                                    '#FF0000',
                                     '#008080',
                                     '#FFFF00',
                                     'rgba(153, 102, 255, 0.2)',
