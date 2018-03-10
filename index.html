@@ -62,10 +62,9 @@
                    object[mealN[i]]=mealS[i];
                    meals.push(object);
                 }
-                
-                console.log(meals);
-                
+                                
                 for(var mealType in meals){
+                    console.log(mealType);
                     //making an array of objects - each object is a singular item in each category - 
                     var mealSales = Object.values(mealType);
                     var mealNames = Object.keys(mealType);
