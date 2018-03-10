@@ -57,8 +57,9 @@
                 var mainKeys = Object.keys(sourceData);                
                 for(var mealType in mainKeys){
                     //making an array of objects - each object is a singular item in each category - 
-                    var mealSales = Object.values(sourceData.mealType);
-                    var mealNames = Object.keys(sourceData.mealType);
+                    var mealObject = sourceData[mealType];
+                    var mealSales = Object.values(mealObject);
+                    var mealNames = Object.keys(mealObject);
                     var individualObjects = [{}];
                     for(i=0;i<mealNames.length;i++){
                         //iterating through all properties of main meal objects, and making them into objects with property as their name and value as how many sales...then adding
