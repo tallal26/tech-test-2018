@@ -90,10 +90,13 @@
                         object[mealNames[j]]=mealSales[j];
                         individualObjects.push(object);
                     }
+                    //array of sorted meals with highest meal sales at highest index
                     var sortedObjects = individualObjects.sort(function(a,b){
                         return Object.values(b)-Object.values(a);
                     });
                     
+                    //getting the top 10 highest meal sales of the sorted meals array above - also considers if there is less than 10
+                    //items
                     var ArraySize = sortedObjects.length;
                     var top10Array=[{}];
                     if(ArraySize-10>0){
@@ -106,21 +109,11 @@
                             top10Array.push(sortedObjects[k]);
                         }
                     }
-                    console.log(top10Array);
                     finalTopTens.push(top10Array);
-                    
-//                     var finalChart = new Chart(myNewChart,{
-//                         type:'bar',
-//                         data:{
-//                             labels: Object.keys(top10Array),
-//                             datasets: [{
-//                                 label: 'Veg',
-//                                 data: Object.values(top10Array),
-//                                 }]
-//                         },
-//                     });
                 }
                 
+                //creating bar charts with chart.js, forLooper function takes in the 2d array finalTopTens and returns an object
+                //with keys corresponding to the top 10 meal names and values of their sales
                 var finalVegChart = new Chart(veg,{
                         type:'bar',
                         data:{
@@ -237,11 +230,6 @@
                             }]
                         },
                     });
-                
-                
-//                 console.log(lool);
-//                 var kik = Object.keys(arrayofInex);
-//                 console.log(kik);
             });
         </script>
     </body>
